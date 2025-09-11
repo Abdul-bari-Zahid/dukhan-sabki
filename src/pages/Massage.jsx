@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
+import { categories } from "../component/Products";
 
 const MessagesPage = () => {
   const location = useLocation();
@@ -9,11 +10,12 @@ const MessagesPage = () => {
   const inbox = [
     {
       id: 1,
-      user: product.Posted,
+      user: product?.Posted || "all",
       productTitle: product ? product.title : "iPhone 12 Pro Max 256GB",
       price: product ? product.price : "61,500",
       number: product ? product.number : "03248667902",
       image: product ? product.image : "https://via.placeholder.com/80",
+      category: product?.category || "mobiles",
       messages: [
         { from: "all", text: "Hello, is this available?" },
         { from: "Me", text: "Yes, it's available." },
@@ -26,10 +28,10 @@ const MessagesPage = () => {
 
   const sendMessage = () => {
     if (!newMsg.trim()) return;
-    setSelectedChat({
-      ...selectedChat,
-      messages: [...selectedChat.messages, { from: "Me", text: newMsg }],
-    });
+    setSelectedChat((prev) => ({
+      ...prev,
+      messages: [...prev.messages, { from: "Me", text: newMsg }],
+    }));
     setNewMsg("");
   };
 
@@ -109,9 +111,13 @@ const MessagesPage = () => {
                   </p>
                 </div>
               </div>
-              <button className="bg-blue-600 text-white px-3 py-1 rounded text-sm">
+              {/* FIXED VIEW AD LINK */}
+              <Link
+                to={`/product/${selectedChat.category.toLowerCase()}-${selectedChat.id}`}
+                className="bg-blue-600 text-white px-3 py-1 rounded text-sm"
+              >
                 View Ad
-              </button>
+              </Link>
             </div>
 
             {/* CHAT MESSAGES */}

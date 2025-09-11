@@ -6,7 +6,7 @@ const MessagesPage = () => {
   const location = useLocation();
   const product = location.state?.product || null;
 
-  // Dummy Inbox Data
+  
   const inbox = [
     {
       id: 1,
@@ -37,7 +37,7 @@ const MessagesPage = () => {
 
   return (
     <div className="flex h-screen bg-white">
-      {/* LEFT: INBOX LIST */}
+      
       <div className="w-1/3 border-r">
         <div className="p-3 border-b font-bold">INBOX</div>
         <div className="p-2 text-sm text-gray-600 flex gap-2 border-b">
@@ -72,11 +72,11 @@ const MessagesPage = () => {
         ))}
       </div>
 
-      {/* RIGHT: CHAT BOX */}
+       
       <div className="flex-1 flex flex-col">
         {selectedChat ? (
           <>
-            {/* TOP BAR */}
+           
             <div className="p-4 border-b flex items-center justify-between bg-gray-100">
               <div className="flex items-center gap-2">
                 <img
@@ -93,8 +93,7 @@ const MessagesPage = () => {
               </div>
               <button className="text-gray-500">X</button>
             </div>
-
-            {/* AD PREVIEW */}
+ 
             <div className="p-3 border-b flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <img
@@ -111,7 +110,7 @@ const MessagesPage = () => {
                   </p>
                 </div>
               </div>
-              {/* FIXED VIEW AD LINK */}
+              
               <Link
                 to={`/product/${selectedChat.category.toLowerCase()}-${selectedChat.id}`}
                 className="bg-blue-600 text-white px-3 py-1 rounded text-sm"
@@ -119,8 +118,7 @@ const MessagesPage = () => {
                 View Ad
               </Link>
             </div>
-
-            {/* CHAT MESSAGES */}
+ 
             <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
               {selectedChat.messages.map((msg, i) => (
                 <div
@@ -141,8 +139,7 @@ const MessagesPage = () => {
                 </div>
               ))}
             </div>
-
-            {/* INPUT BOX */}
+ 
             <div className="p-3 border-t bg-white">
               <div className="flex items-center justify-between border-b pb-2 mb-2">
                 <button className="font-semibold text-gray-600">

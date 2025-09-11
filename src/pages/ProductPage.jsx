@@ -74,7 +74,7 @@ const ProductDetails = () => {
               <div className="col-span-1 md:col-span-2">{slug}</div>
             </div>
           </div>
-          {/* Description */}
+          
           <div className="bg-white rounded-lg shadow p-6">
             <h2 className="text-lg font-bold mb-3">Description</h2>
             <p className="text-gray-700">
@@ -84,7 +84,7 @@ const ProductDetails = () => {
             </p>
           </div>
         </div>
-        {/* Right: Seller Info & Actions */}
+         
         <div className="w-full lg:w-80 flex-shrink-0">
           <div className="bg-white rounded-lg shadow p-6 mb-4">
             <div className="flex items-center mb-4">
@@ -116,7 +116,7 @@ const ProductDetails = () => {
         </div>
       </div>
 
-      {/* Related Ads */}
+       
       <div className="container mx-auto mt-10">
         <h2 className="text-lg font-bold mb-4">Related ads</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -137,7 +137,7 @@ const ProductDetails = () => {
           ))}
         </div>
       </div>
-      {/* Safety Tips */}
+    
       <div className="container mx-auto mt-10">
         <h2 className="text-lg font-bold mb-2">Your safety matters to us!</h2>
         <ul className="list-disc pl-5 text-gray-700 text-sm space-y-1">

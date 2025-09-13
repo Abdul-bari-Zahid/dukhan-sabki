@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const Register = ({openLogin}) => {
   return (
 
@@ -27,7 +27,8 @@ const Register = ({openLogin}) => {
         <div className='text-center'>
           <span className='text-gray-700'>
               Already Have an Account?  </span>
-          <button className='text-red-800' onClick={openLogin}>Login</button>
+        <Link className='text-red-800' onClick={openLogin} to="/login">Login</Link >
+
         </div>
       </div>
   

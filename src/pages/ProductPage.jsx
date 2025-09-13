@@ -95,7 +95,7 @@ const ProductDetails = () => {
               />
               <div>
                 <div className="font-semibold">Posted by {product.Posted}</div>
-                <div className="text-xs text-gray-500">Member Since 2019</div>
+                <div className="text-xs text-gray-500">Member Since 2025</div>
               </div>
             </div>
             <button className="w-full bg-green-600 text-white py-2 rounded font-semibold mb-2 hover:bg-green-700" onClick={(e) => handleNumber(e)}>

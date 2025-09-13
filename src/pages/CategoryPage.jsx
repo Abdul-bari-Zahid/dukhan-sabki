@@ -23,7 +23,6 @@ const CategoryPage = () => {
 
   if (!category) return <div className="text-center py-10">Category not found</div>
 
-  // Filtering & Sorting
   let filteredProducts = category.products
   if (filter.minPrice)
     filteredProducts = filteredProducts.filter(p => parseInt(p.price.replace(/[^\d]/g, '')) >= parseInt(filter.minPrice))
@@ -33,8 +32,7 @@ const CategoryPage = () => {
     filteredProducts = [...filteredProducts].sort((a, b) => parseInt(a.price.replace(/[^\d]/g, '')) - parseInt(b.price.replace(/[^\d]/g, '')))
   if (filter.sort === 'high')
     filteredProducts = [...filteredProducts].sort((a, b) => parseInt(b.price.replace(/[^\d]/g, '')) - parseInt(a.price.replace(/[^\d]/g, '')))
-  // For 'latest', you can sort by time if you have a date field
-
+ 
   return (
     <div className="container mx-auto px-4 py-8">
       <CategoryList />
